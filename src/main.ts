@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { mount } from '@xiaobai-world/api'
 
-createApp(App).mount('#app')
+
+function render(selector: string) {
+ createApp(App).mount(selector)
+}
+
+mount(render).catch(res => {
+ render('#app')
+})
